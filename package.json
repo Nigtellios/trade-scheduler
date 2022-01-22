@@ -1,0 +1,36 @@
+{
+  "name": "trade-scheduler",
+  "version": "1.0.0",
+  "description": "Trade Scheduler App.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nigtellios/trade-scheduler.git"
+  },
+  "keywords": [
+    "trade",
+    "scheduler",
+    "app",
+    "node",
+    "js",
+    "sequalize"
+  ],
+  "author": "Jakub Kowalski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nigtellios/trade-scheduler/issues"
+  },
+  "homepage": "https://github.com/Nigtellios/trade-scheduler#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1",
+    "sequelize": "^6.14.0",
+    "yarn": "^1.22.17"
+  }
+}
