@@ -1,8 +1,8 @@
-const { createUser } = require("../../Controllers/Users/createUser");
-const { deleteUser } = require("../../Controllers/Users/deleteUser");
-const { getUserById } = require("../../Controllers/Users/getUserById");
-const { getUsers } = require("../../Controllers/Users/getUsers");
-const { updateUser } = require("../../Controllers/Users/updateUser");
+const { createUser } = require("../../Functions/Users/createUser");
+const { deleteUser } = require("../../Functions/Users/deleteUser");
+const { getUserById } = require("../../Functions/Users/getUserById");
+const { getUsers } = require("../../Functions/Users/getUsers");
+const { updateUser } = require("../../Functions/Users/updateUser");
 
 const user = {
   createUser,
