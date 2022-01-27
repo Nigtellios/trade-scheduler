@@ -1,6 +1,7 @@
 {
   "name": "trade-scheduler",
   "version": "1.0.0",
+  "type": "module",
   "description": "Trade Scheduler App.",
   "main": "src/app.js",
   "scripts": {

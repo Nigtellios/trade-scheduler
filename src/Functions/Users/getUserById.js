@@ -1,4 +1,4 @@
-const { pool } = require('../../Database/connect');
+import { pool } from '../../Database/connect.js';
 
 const getUserById = (req, res) => {
   const id = parseInt(req.params.id);
@@ -11,6 +11,4 @@ const getUserById = (req, res) => {
   });
 }
 
-module.exports = {
-  getUserById
-}
+export { getUserById }

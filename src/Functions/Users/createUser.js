@@ -1,4 +1,4 @@
-const { pool } = require('../../Database/connect');
+import { pool } from '../../Database/connect.js';
 
 const createUser = (req, res) => {
   const { name, tag, slug } = req.body;
@@ -11,6 +11,4 @@ const createUser = (req, res) => {
   });
 }
 
-module.exports = {
-  createUser
-}
+export { createUser }

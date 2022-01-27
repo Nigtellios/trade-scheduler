@@ -1,4 +1,4 @@
-const { pool } = require('../../Database/connect');
+import { pool } from '../../Database/connect.js';
 
 const deleteUser = (req, res) => {
   const id = parseInt(req.params.id);
@@ -11,6 +11,4 @@ const deleteUser = (req, res) => {
   });
 }
 
-module.exports = {
-  deleteUser
-}
+export { deleteUser }

@@ -1,4 +1,4 @@
-const { pool } = require('../../Database/connect');
+import { pool } from '../../Database/connect.js';
 
 const getUsers = (req, res) => {
   pool.query('SELECT * FROM users ORDER BY id ASC', null,(err, results) => {
@@ -9,6 +9,4 @@ const getUsers = (req, res) => {
   });
 }
 
-module.exports = {
-  getUsers
-}
+export { getUsers }

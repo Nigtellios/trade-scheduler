@@ -1,43 +1,35 @@
 // Imports/Requires
-const { port } = require('../config');
-const bodyParser = require('body-parser');
-const express = require('express');
-const { user } = require("./Routes/User/routes");
+import bodyParser from 'body-parser';
+import express from 'express';
+import UserRouter from "./Routes/users.js";
+import config from "./config.js";
 
 // Server Init
 const app = express();
-const appPort = port;
+const appPort = config.port;
+const appUrl = config.address;
 
 // BodyParser Init
-const initBodyParser = () => {
-  app.use(bodyParser.json());
-  app.use(
-    bodyParser.urlencoded({
-      extended: true,
-    })
-  );
-}
+app.use(bodyParser.json());
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
 
-initBodyParser();
+app.get('/', (req, res) => {
+  res.json({
+    info: 'This is an Trade Scheduler Server. Enjoy!'
+  })
+});
 
-const displayHome = () => {
-  app.get('/', (req, res) => {
-    res.json({
-      info: 'This is an Trade Scheduler Server. Enjoy!'
-    })
-  });
-}
+// Routers
+app.use('/users', UserRouter);
 
-displayHome();
-
-// Routes
-app.get('/users', user.getUsers);
-app.get('/users/:id', user.getUserById);
-app.post('/users', user.createUser);
-app.put('/users/:id', user.updateUser);
-app.delete('/users/:id', user.deleteUser);
+app.set('domain', appUrl);
+app.set('port', appPort);
 
 // Port Listener
-app.listen(appPort, () => {
-  console.log(`Server is running up at: ${appPort}!`);
+app.listen(appPort, appUrl, () => {
+  console.log(`Server is running up at: ${appPort} in ${appUrl}!`);
 });

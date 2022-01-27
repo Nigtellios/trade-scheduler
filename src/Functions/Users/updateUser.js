@@ -1,4 +1,4 @@
-const { pool } = require('../../Database/connect');
+import { pool } from '../../Database/connect.js';
 
 const updateUser = (req, res) => {
   const id = parseInt(req.params.id);
@@ -16,6 +16,4 @@ const updateUser = (req, res) => {
   )
 }
 
-module.exports = {
-  updateUser
-}
+export { updateUser }
